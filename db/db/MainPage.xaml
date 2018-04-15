@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:db"
+             x:Class="db.MainPage">
+
+    <StackLayout>
+        <Entry Text="{Binding name}"/>
+        <Entry Text="{Binding add}"/>
+        <StackLayout Orientation="Horizontal">
+            <Button x:Name="SaveButton" Text="Save" Command="{Binding SaveButton_Clicked}"/>
+            <Button x:Name="ShowButton" Text="Show" Command="{Binding ShowButton_Clicked}"/>
+            <!--<Button x:Name="myb" Clicked="myb_Clicked"/>-->
+        </StackLayout>
+        <ListView ItemsSource="{Binding datalist}">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <TextCell Text="{Binding Name}" Detail="{Binding Address}"/>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+    </StackLayout>
+
+</ContentPage>
+
+
+<!--Text="{Binding name}"-->
+    <!--Text="{Binding add}"-->
